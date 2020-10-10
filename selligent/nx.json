@@ -1,0 +1,49 @@
+{
+  "npmScope": "selligent",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "flight-app": {
+      "tags": []
+    },
+    "flight-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["flight-app"]
+    },
+    "booking-domain": {
+      "tags": ["domain:booking", "type:domain-logic"]
+    },
+    "boarding-domain": {
+      "tags": ["domain:boarding", "type:domain-logic"]
+    },
+    "booking-feature-search": {
+      "tags": ["domain:booking", "type:feature"]
+    },
+    "booking-feature-cancel": {
+      "tags": ["domain:booking", "type:feature"]
+    },
+    "boarding-feature-manage": {
+      "tags": ["domain:boarding", "type:feature"]
+    }
+  }
+}
